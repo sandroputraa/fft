@@ -241,12 +241,12 @@ const Excute = async function(User, pckUsername, TargetUsername, Usernames, slee
           }
         }));
         const getpiceksu = await piceksu(pckUsername);
-        console.log(chalk`{bold.red \n [#][>] Jeda 40 Menit [|] } {bold.yellow [|] Akun Yang di fft : ${Usernames} [|] } {bold.magenta [|] Followers : [${getpiceksu.followers}] Following : [${getpiceksu.following}] [|]} {bold.green [|] Dengan target : ${TargetUsername} [<][#] }\n`);
+        console.log(chalk`{bold.red \n [#][>] Jeda ${sleep}[|] } {bold.yellow [|] Akun Yang di fft : ${Usernames} [|] } {bold.magenta [|] Followers : [${getpiceksu.followers}] Following : [${getpiceksu.following}] [|]} {bold.green [|] Dengan target : ${TargetUsername} [<][#] }\n`);
         await delay(sleep);
       }
       TargetCursor = await Targetfeed.getCursor();
         const getpiceksu = await piceksu(pckUsername);
-        console.log(chalk`{bold.red \n [#][>] Jeda 40 Menit [|] } {bold.yellow [|] Akun Yang di fft : ${Usernames} [|] } {bold.magenta [|] Followers : [${getpiceksu.followers}] Following : [${getpiceksu.following}] [|]} {bold.green [|] Dengan target : ${TargetUsername} [<][#] }\n`);
+        console.log(chalk`{bold.red \n [#][>] Jeda ${sleep}[|] } {bold.yellow [|] Akun Yang di fft : ${Usernames} [|] } {bold.magenta [|] Followers : [${getpiceksu.followers}] Following : [${getpiceksu.following}] [|]} {bold.green [|] Dengan target : ${TargetUsername} [<][#] }\n`);
       await delay(sleep);
     } while(Targetfeed.isMoreAvailable());
   } catch (err) {
