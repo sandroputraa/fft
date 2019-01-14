@@ -270,8 +270,9 @@ console.log(chalk`
   What's new?
   1. Input Target/delay Manual (ITTYW)
   2. Auto Check Followers 
-  3. Save Name Account
-  4. Save Target Account
+  3. Auto Check Following
+  4. Save Name Account
+  5. Save Target Account
   —————————————————————————————————————————————————————}
       `);
 //sandro.putraa
