@@ -32,7 +32,7 @@ const User = [
 {
   type:'input',
   name:'sleep',
-  message:'[>] Insert Sleep (MiliSeconds):',
+  message:'[>] Insert Sleep (Minutes):',
   validate: function(value){
     value = value.match(/[0-9]/);
     if (value) return true;
@@ -213,9 +213,9 @@ const Followers = async function(session, id){
 
 const Excute = async function(User, pckUsername, TargetUsername, Usernames, sleep, mysyntx){
   try {
+    sleep = sleep*60*1000;
     console.log(chalk`{yellow \n [?] Try to Login . . .}`)
     const doLogin = await Login(User);
-
     console.log(chalk`{green  [!] Login Succsess, }{yellow [?] Try To Get ID & Followers Target . . .}`)
     const getTarget = await Target(TargetUsername);
     console.log(chalk`{red  [!] ${TargetUsername}: [${getTarget.id}] | Followers: [${getTarget.followers}]}`)
@@ -241,12 +241,12 @@ const Excute = async function(User, pckUsername, TargetUsername, Usernames, slee
           }
         }));
         const getpiceksu = await piceksu(pckUsername);
-        console.log(chalk`{bold.red \n [#][>] Jeda ${sleep}[|] } {bold.yellow [|] Akun Yang di fft : ${Usernames} [|] } {bold.magenta [|] Followers : [${getpiceksu.followers}] Following : [${getpiceksu.following}] [|]} {bold.green [|] Dengan target : ${TargetUsername} [<][#] }\n`);
+        console.log(chalk`{bold.red \n [#][>] Jeda ${sleep/60/1000} [|] } {bold.yellow [|] Akun Yang di fft : ${Usernames} [|] } {bold.magenta [|] Followers : [${getpiceksu.followers}] Following : [${getpiceksu.following}] [|]} {bold.green [|] Dengan target : ${TargetUsername} [<][#] }\n`);
         await delay(sleep);
       }
       TargetCursor = await Targetfeed.getCursor();
         const getpiceksu = await piceksu(pckUsername);
-        console.log(chalk`{bold.red \n [#][>] Jeda ${sleep}[|] } {bold.yellow [|] Akun Yang di fft : ${Usernames} [|] } {bold.magenta [|] Followers : [${getpiceksu.followers}] Following : [${getpiceksu.following}] [|]} {bold.green [|] Dengan target : ${TargetUsername} [<][#] }\n`);
+        console.log(chalk`{bold.red \n [#][>] Jeda ${sleep/60/1000} [|] } {bold.yellow [|] Akun Yang di fft : ${Usernames} [|] } {bold.magenta [|] Followers : [${getpiceksu.followers}] Following : [${getpiceksu.following}] [|]} {bold.green [|] Dengan target : ${TargetUsername} [<][#] }\n`);
       await delay(sleep);
     } while(Targetfeed.isMoreAvailable());
   } catch (err) {
@@ -263,16 +263,21 @@ console.log(chalk`
   ——————————————————  [THANKS TO]  ————————————————————
   [✓] CODE BY CYBER SCREAMER CCOCOT (ccocot@bc0de.net)
   [✓] FIXING & TESTING BY SYNTAX (@officialputu_id)
-  [✓]         REEDIT BY SANDRO.PUTRAA
+  [✓]                 REEDIT BY  
+  ####    ##   #    # #####  #####   ####      #####  #    # ##### #####    ##     ##   
+ #       #  #  ##   # #    # #    # #    #     #    # #    #   #   #    #  #  #   #  #  
+  ####  #    # # #  # #    # #    # #    #     #    # #    #   #   #    # #    # #    # 
+      # ###### #  # # #    # #####  #    # ### #####  #    #   #   #####  ###### ###### 
+ #    # #    # #   ## #    # #   #  #    # ### #      #    #   #   #   #  #    # #    # 
+  ####  #    # #    # #####  #    #  ####  ### #       ####    #   #    # #    # #    #                                                                                       
   [✓] CCOCOT.CO | BC0DE.NET | NAONLAH.NET | WingkoColi
   [✓] SGB TEAM REBORN | Zerobyte.id | ccocot@bc0de.net 
   —————————————————————————————————————————————————————
   What's new?
   1. Input Target/delay Manual (ITTYW)
   2. Auto Check Followers 
-  3. Auto Check Following
-  4. Save Name Account
-  5. Save Target Account
+  3. Save Name Account
+  4. Save Target Account
   —————————————————————————————————————————————————————}
       `);
 //sandro.putraa
